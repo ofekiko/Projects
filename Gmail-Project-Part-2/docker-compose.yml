@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  server:
+    container_name: server
+    build:
+      context: ./src/server
+      dockerfile: Dockerfile
+    networks:
+      - app-network
+    
+
+  client:
+    build:
+      context: ./src/client
+      dockerfile: Dockerfile
+    depends_on:
+      - server
+    networks:
+      - app-network
+    container_name: client
+    tty: true
+    stdin_open: true
+
+
+networks:
+  app-network:

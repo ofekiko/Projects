@@ -1,0 +1,15 @@
+FROM gcc:latest
+
+RUN apt-get update && \
+    apt-get install -y cmake git
+
+
+WORKDIR /app
+COPY . .
+
+RUN mkdir -p build/data && cp src/server/data/Blacklist.txt build/data/
+
+RUN cmake -S tests/ -B build && cmake --build build
+
+WORKDIR /app/build
+CMD ["./runTests"]
