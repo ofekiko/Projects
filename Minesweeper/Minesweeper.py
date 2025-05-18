@@ -1,8 +1,9 @@
-# ID: 322374240
-# NAME: OFEK KAHARIZI
+import random
 import tkinter as tk
 from tkinter import messagebox, Button
-import random
+
+global directions
+directions = [(-1, -1), (-1, 1), (-1, 0), (0, -1), (1, 1), (1, -1), (1, 0), (0, 1)]
 
 class Cell:
     def __init__(self, x: int, y: int, is_mine: bool = False):
@@ -14,11 +15,11 @@ class Cell:
         self.neighbor_mines = 0
 
     def calculate_neighbor_mines(self, grid):
-        directions = [(-1, -1), (-1, 0), (-1, 1), (0, -1), (0, 1), (1, -1), (1, 0), (1, 1)]
         self.neighbor_mines = sum(
-            1 for dx, dy in directions
-            if
-            0 <= self.x + dx < len(grid) and 0 <= self.y + dy < len(grid[0]) and grid[self.x + dx][self.y + dy].is_mine
+            1 for direction_x, direction_y in directions
+            if 0 <= self.x + direction_x < len(grid) and
+              0 <= self.y + direction_y < len(grid[0]) and
+                grid[self.x + direction_x][self.y + direction_y].is_mine
         )
 
 class Board:
@@ -73,18 +74,17 @@ class Board:
                     self._reveal_neighbors(i, j)
 
     def _reveal_neighbors(self, x: int, y: int):
-        directions = [(-1, -1), (-1, 0), (-1, 1), (0, -1), (0, 1), (1, -1), (1, 0), (1, 1)]
-        for dx, dy in directions:
-            nx, ny = x + dx, y + dy
-            if 0 <= nx < self.size and 0 <= ny < self.size:
-                neighbor = self.grid[nx][ny]
+        for direction_x, direction_y in directions:
+            new_x, new_y = x + direction_x, y + direction_y
+            if 0 <= new_x < self.size and 0 <= new_y < self.size:
+                neighbor = self.grid[new_x][new_y]
                 if not neighbor.is_revealed and not neighbor.is_mine and not neighbor.is_flagged:
                     neighbor.is_revealed = True
-                    self.buttons[nx][ny].config(bg="white", state=tk.DISABLED, text=str(neighbor.neighbor_mines)
+                    self.buttons[new_x][new_y].config(bg="white", state=tk.DISABLED, text=str(neighbor.neighbor_mines)
                     if neighbor.neighbor_mines > 0 else "")
                     self.unrevealed -= 1
                     if neighbor.neighbor_mines == 0:
-                        self._reveal_neighbors(nx, ny)
+                        self._reveal_neighbors(new_x, new_y)
 
     def toggle_flag(self, event=None):
         button = event.widget
