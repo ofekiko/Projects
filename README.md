@@ -15,12 +15,12 @@ Here's a brief overview of the projects included in this repository:
 * **Key Skills Demonstrated:** Python, Tkinter, GUI Development, Game Logic, Event Handling, OOP.
 * **How to Run:**
     1.  Ensure you have Python installed on your system.
-    2.  Navigate to the `Minesweeper` directory (or the actual directory name if different).
+    2.  Navigate to the `Minesweeper` directory.
     3.  Run the game using the command: `python Minesweeper.py`.
 
 ### 2. Brickout (Java)
 
-* **Description:** A rendition of the classic Brickout (or Breakout) arcade game developed using Java. This project highlights my skills in:
+* **Description:** A rendition of the classic Brickout arcade game developed using Java. This project highlights my skills in:
     * Game development in Java.
     * Handling game loops and animation.
     * Collision detection.
@@ -31,10 +31,10 @@ Here's a brief overview of the projects included in this repository:
 
 * **Description:** This section contains a collection of assignments completed in Assembly language. These projects demonstrate my understanding of:
     * Low-level programming concepts.
-    * Processor architecture (specify which architecture if relevant, e.g., x86, ARM).
+    * Processor architecture x86.
     * Memory management at a fundamental level.
     * Implementing basic algorithms in Assembly.
-* **Key Skills Demonstrated:** Assembly Language (specify architecture), Low-Level Programming, Processor Architecture, Memory Management, Algorithm Implementation.
+* **Key Skills Demonstrated:** Assembly Language x86_64, Low-Level Programming, Processor Architecture, Memory Management, Algorithm Implementation.
 * **How to Explore:** The assembly files are provided with comments explaining the logic and functionality. You will likely need an assembler to run and test these assignments. Please refer to the individual assignment files for specific instructions or tools used.
 
 ### 4. Gmail Site (C++ - Early-Stage Team Project)
@@ -44,14 +44,14 @@ Here's a brief overview of the projects included in this repository:
     * **Object-Oriented Design:** Contributing to the project's architectural structure.
     * **Team Collaboration:** Working effectively within a development team.
     * **Project Management:** Utilizing GitHub for version control and Jira for task tracking and workflow management.
-    * **Containerization (Experimentation):** Exploring the use of Docker for potential deployment and environment consistency.
+    * **Experimentation:** Exploring the use of Docker for potential deployment and environment consistency.
 
 * **Key Contributions:** My specific responsibilities and accomplishments within this project included:
     * **Developing Unit Tests:** Creating comprehensive tests for various classes to ensure code quality and reliability.
     * **Jira Management:** Actively managing the Jira board, including task creation, assignment, progress tracking, and workflow optimization.
     * **Bloom Filter Implementation:** Designing and implementing a Bloom filter for efficient set membership testing, likely for features like spam detection or URL filtering.
     * **File I/O Operations:** Implementing robust functions for handling file-related tasks, such as reading from and writing to blacklists.
-    * **Core Functionality Implementation:** Developing significant functions, including `CheckUrl` and `DeleteURL` (for managing blacklisted URLs).
+    * **Core Functionality Implementation:** Developing significant functions, including `CheckUrl` and `DeleteURL`.
 
 * **Current Status:** The project is currently in its early stages and does not yet offer full Gmail functionality. The implemented features include a basic menu allowing users to interact with a blacklist, enabling them to add and remove specific websites.
 
