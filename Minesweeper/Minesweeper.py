@@ -63,15 +63,19 @@ class Board:
                     self.buttons[i][j].config(bg="red", state=tk.DISABLED, text="B")
                     messagebox.showinfo("Result", "you hit a bomb!")
                     quit()
-                self.buttons[i][j].config(bg="white", state=tk.DISABLED, text=str(cell.neighbor_mines)
-                if cell.neighbor_mines > 0 else "")
-                self.unrevealed -= 1
-                if self.unrevealed == self.mine_count:
-                    messagebox.showinfo("Result", "you won the game!")
-                    quit()
-                cell.is_revealed = True
-                if cell.neighbor_mines == 0 and not cell.is_mine:
-                    self._reveal_neighbors(i, j)
+                else:
+                    self.action_on_cell(i,j)
+                
+    def action_on_cell(self, i: int, j: int):
+        cell = self.grid[i][j]
+        self.buttons[i][j].config(bg="white", state=tk.DISABLED, text=str(cell.neighbor_mines) if cell.neighbor_mines > 0 else "")
+        cell.is_revealed = True
+        self.unrevealed -= 1
+        if self.unrevealed == self.mine_count:
+            messagebox.showinfo("Result", "you won the game!")
+            quit()
+        if cell.neighbor_mines == 0 and not cell.is_mine:
+            self._reveal_neighbors(i, j)
 
     def _reveal_neighbors(self, x: int, y: int):
         for direction_x, direction_y in directions:
