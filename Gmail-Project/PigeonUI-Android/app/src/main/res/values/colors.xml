@@ -1,0 +1,33 @@
+<resources>
+    <color name="colorPrimary">#1b3957</color>
+    <color name="colorPrimaryVariant">#370083</color>
+    <color name="colorOnPrimary">#FFFFFF</color>
+
+    <color name="colorBackground">#e3e2df</color>
+    <color name="colorOnBackground">#000000</color>
+
+    <color name="colorHintText">#666666</color>
+
+    <color name="colorSurface">#FFFFFF</color>
+    <color name="colorOnSurface">#000000</color>
+    <color name="light_gray_background">#F0F0F0</color>
+
+    <color name="colorError">#B00020</color>
+    <color name="colorOnError">#FFFFFF</color>
+
+    <color name="colorUpsideDown">#FFFFFF</color>
+
+    <color name="white">#FFFFFFFF</color>
+    <color name="yellow">#FFD700</color>
+    <color name="black">#FF000000</color>
+    <color name="blue">#1565C0</color>
+
+    <color name="nav_item_pressed">#E0E0E0</color>
+    <color name="nav_item_selected">#E0F0FF</color>
+
+    <color name="light_blue">#64B5F6</color>
+    <color name="dark_blue">#1565C0</color>
+
+    <color name="dark_mode_button_color">#121212</color>
+
+</resources>

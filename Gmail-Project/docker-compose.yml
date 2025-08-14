@@ -1,0 +1,46 @@
+services:
+  mongodb:
+    image: mongo
+    container_name: mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+    networks:
+      - default
+
+  blacklistserver:
+    build:
+      context: ./BlackListServer
+      dockerfile: Dockerfile
+    volumes:
+      - ./BlackListServer/data:/usr/src/blacklist/data
+    networks:
+      - default
+    entrypoint: ./blacklist
+    command: ["5555", "1000", "3", "5", "5"]
+
+  apiserver:
+    build:
+      context: ./ApiServer
+    ports:
+      - "8080:8080"
+    container_name: apiserver
+    depends_on:
+      - blacklistserver
+      - mongodb
+    env_file:
+      - ./ApiServer/.env
+
+  pigeon-ui:
+    build:
+      context: ./PigeonUI-React
+      dockerfile: Dockerfile
+    ports:
+      - "3000:80"
+    container_name: PigeonUI-React
+    depends_on:
+      - apiserver
+
+volumes:
+    mongo-data:

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:background="@color/colorBackground"
+    android:id="@+id/profileFragment"
+    android:layout_height="match_parent">
+
+    <!-- Close Button -->
+    <ImageButton
+        android:id="@+id/btnCloseProfile"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_gravity="top|end"
+        android:layout_margin="12dp"
+        android:background="@android:color/transparent"
+        android:src="@drawable/ic_close"
+        android:contentDescription="@string/close"
+        app:tint="@color/colorOnBackground" />
+
+    <!-- Content Layout -->
+    <LinearLayout
+        android:orientation="vertical"
+        android:gravity="top|center_horizontal"
+        android:padding="24dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- Email Text -->
+        <TextView
+            android:id="@+id/tvMailUser"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorOnBackground"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginTop="40dp"
+            android:layout_marginBottom="16dp"
+            android:text="email@example.com" />
+
+        <!-- Profile Picture -->
+        <ImageView
+            android:id="@+id/ivUserPicture"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginBottom="16dp"
+            android:src="@drawable/ic_avatar"
+            android:scaleType="centerCrop"
+            android:background="@drawable/circle_background"
+            android:contentDescription="Profile Picture" />
+
+        <!-- Greeting Text -->
+        <TextView
+            android:id="@+id/tvHiMessage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorOnBackground"
+            android:textSize="18sp"
+            android:text="Hi, First Last"
+            android:layout_marginBottom="32dp"
+            android:textStyle="bold" />
+
+        <!-- Logout Button -->
+        <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+            android:id="@+id/btnLogout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/sign_out"
+            android:textColor="@android:color/white"
+            android:contentDescription="Sign Out"
+            app:icon="@drawable/ic_logout"
+            app:iconTint="@android:color/white"
+            app:iconPadding="8dp"
+            app:backgroundTint="@color/blue" />
+    </LinearLayout>
+</FrameLayout>

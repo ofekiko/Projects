@@ -1,0 +1,13 @@
+# General
+node_modules
+.DS_Store
+
+# React
+PigeonUI-React/node_modules
+PigeonUI-React/build
+
+# Android
+PigeonUI-Android/.idea
+PigeonUI-Android/app/build
+PigeonUI-Android/build
+*.iml

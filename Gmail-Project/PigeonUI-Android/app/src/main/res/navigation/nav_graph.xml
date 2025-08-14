@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/welcomeFragment">
+
+    <!-- Welcome Fragment -->
+    <fragment
+        android:id="@+id/welcomeFragment"
+        android:name="com.mso.pigeonui.WelcomeFragment"
+        android:label="Welcome">
+        <action
+            android:id="@+id/action_welcomeFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_welcomeFragment_to_registerFragment"
+            app:destination="@id/registerFragment" />
+    </fragment>
+
+    <!-- Login Fragment -->
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.mso.pigeonui.LoginFragment"
+        android:label="Login">
+        <action
+            android:id="@+id/action_loginFragment_to_inboxFragment"
+            app:destination="@id/inboxFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_registerFragment"
+            app:destination="@id/registerFragment" />
+    </fragment>
+
+    <!-- Register Fragment -->
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.mso.pigeonui.RegisterFragment"
+        android:label="Register">
+        <action
+            android:id="@+id/action_registerFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+
+    <!-- Inbox Fragment -->
+    <fragment
+        android:id="@+id/inboxFragment"
+        android:name="com.mso.pigeonui.InboxFragment"
+        android:label="Inbox">
+        <action
+            android:id="@+id/action_inboxFragment_to_composeFragment"
+            app:destination="@id/composeFragment" />
+        <action
+            android:id="@+id/action_inboxFragment_to_labelFragment"
+            app:destination="@id/labelFragment" />
+        <action
+            android:id="@+id/action_inboxFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+        <action
+            android:id="@+id/action_inboxFragment_to_mailDetailFragment"
+            app:destination="@id/mailDetailFragment" />
+    </fragment>
+
+    <!-- Compose Fragment -->
+    <fragment
+        android:id="@+id/composeFragment"
+        android:name="com.mso.pigeonui.ComposeFragment"
+        android:label="Compose">
+        <action
+            android:id="@+id/action_composeFragment_to_inboxFragment"
+            app:destination="@id/inboxFragment" />
+    </fragment>
+
+    <!-- Label Fragment -->
+    <fragment
+        android:id="@+id/labelFragment"
+        android:name="com.mso.pigeonui.NewLabelFragment"
+        android:label="New Label">
+        <action
+            android:id="@+id/action_labelFragment_to_inboxFragment"
+            app:destination="@id/inboxFragment" />
+    </fragment>
+
+    <!-- Profile Fragment -->
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.mso.pigeonui.ProfileFragment"
+        android:label="Profile">
+        <action
+            android:id="@+id/action_profileFragment_to_inboxFragment"
+            app:destination="@id/inboxFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_welcomeFragment"
+            app:destination="@id/welcomeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/mailDetailFragment"
+        android:name="com.mso.pigeonui.MailDetailFragment"
+        android:label="@string/mail_detail_title"
+        tools:layout="@layout/fragment_mail_detail">
+    <!-- Define arguments here if you're passing data (e.g., mailId) -->
+    <argument
+        android:name="mailId"
+        app:argType="string" />
+</fragment>
+
+</navigation>
+

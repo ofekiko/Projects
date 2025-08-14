@@ -1,0 +1,233 @@
+@font-face {
+  font-family: 'GlikerSemiBold';
+  src: url('../assets/fonts/Gliker-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Hangyaboly';
+  src: url('../assets/fonts/Hangyaboly.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'ITC';
+  src: url('../assets/fonts/ITCBenguiatStdBookCn.OTF') format('opentype');
+  font-style: normal;
+  font-weight: normal;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+.login-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #e4e3e0;
+  padding-top: 40px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.logo-image {
+  width: 400px;
+  height: auto;
+  max-width: 100%;
+  object-fit: contain;
+  margin-bottom: 8px;
+}
+
+.login-card {
+  margin-top: 16px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  width: 400px;
+  max-width: 90%;
+  padding: 32px 24px;
+  box-sizing: border-box;
+  margin-bottom: 40px;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-form label {
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  color: #273845;
+  margin-bottom: 8px;
+    font-weight: 600;
+
+}
+
+.login-form input[type="text"],
+.login-form input[type="password"] {
+  padding: 12px 14px;
+  font-size: 16px;
+  border: 1px solid #cbd2d9;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  outline: none;
+  transition: border-color 0.2s ease-in-out;
+}
+
+.login-form input[type="text"]:focus,
+.login-form input[type="password"]:focus {
+  border-color: #4a90e2;
+}
+
+
+.login-button {
+  font-family: 'Roboto', sans-serif;
+  background-color: #4852a0;
+  color: white;
+  padding: 14px;
+  font-size: 22px;
+  font-weight: 500;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+.login-button:hover {
+  background-color: #417acc;
+}
+
+.register-link {
+  margin-top: 6px;
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+  font-size: 18px !important;
+  color: #546a7b;
+}
+
+.register-link a {
+  color: #4a90e2;
+  text-decoration: none;
+  font-weight: 500;
+  margin-left: 4px;
+}
+
+.register-link a:hover {
+  text-decoration: underline;
+}
+
+.toggle-container {
+  position: absolute;
+  top: 16px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.toggle-icon {
+  font-family: 'Hangyaboly', sans-serif;
+  font-size: 24px;
+  font-weight: bold;
+  color: #4852a0;
+  background-color: white;
+  border: 2px solid #4852a0;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.toggle-icon:hover {
+  background-color: #e4e3e0;
+}
+
+.dark-mode {
+  background-color: #1e1e1e;
+  color: #f1f1f1;
+}
+
+.dark-mode .login-card {
+  background-color: #2c2c2c;
+  box-shadow: 0px 4px 12px rgba(255, 255, 255, 0.05);
+}
+
+.dark-mode label {
+  color: #f1f1f1;
+}
+
+.dark-mode input,
+.dark-mode select {
+  background-color: #333;
+  color: #ffffff;
+  border-color: #555;
+}
+
+.dark-mode input:focus,
+.dark-mode select:focus {
+  border-color: #888;
+}
+
+.dark-mode input::placeholder {
+  color: #cccccc;
+}
+
+.login-page.dark-mode .login-button {
+  background-color: #89dee8;
+  color: #000;
+}
+
+.dark-mode .login-button:hover {
+  background-color: #0097a7;
+}
+
+.dark-mode .register-link a {
+  color: #00e0ff !important;
+}
+
+.dark-mode .register-link a:hover {
+  color: #26ffff;
+}
+
+.dark-mode .toggle-icon {
+  background-color: #000;
+  color: #fff;
+  border-color: #fff;
+}
+
+.dark-mode .toggle-icon:hover {
+  background-color: #333;
+}
+
+.login-page,
+.register-page,
+.login-card,
+.register-card,
+input,
+select,
+label,
+button {
+  transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease;
+}
+
+.toggle-icon {
+  transition: all 0.3s ease;
+}
+
+.toggle-icon:hover {
+  background-color: #e4e3e0;
+}
+
+.dark-mode .toggle-icon:hover {
+  background-color: #333;
+}
+.error-message {
+  color: red;
+  margin-top: 10px;
+  font-size: 14px;
+}
